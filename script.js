@@ -1,18 +1,18 @@
 // ── DATA ──────────────────────────────────────────────────────────────────────
 
 const teamMembers = [
-  { name: 'João Ferreira',  avatar: 'https://i.pravatar.cc/150?img=11', linkedin: '#', github: '#' },
-  { name: 'Ana Santos',     avatar: 'https://i.pravatar.cc/150?img=47', linkedin: '#', github: '#' },
-  { name: 'Roberto Mota',   avatar: 'https://i.pravatar.cc/150?img=15', linkedin: '#', github: '#' },
-  { name: 'Rita Godinho',   avatar: 'https://i.pravatar.cc/150?img=49', linkedin: '#', github: '#' },
-  { name: 'Tomás Coutinho', avatar: 'https://i.pravatar.cc/150?img=53', linkedin: '#', github: '#' },
+  { name: 'João Ferreira',  avatar: '/public/images/team/joao_ferreira.jpeg', linkedin: '#', github: '#' },
+  { name: 'Ana Santos',     avatar: '/public/images/team/ana_santos.jpeg', linkedin: '#', github: '#' },
+  { name: 'Roberto Mota',   avatar: '/public/images/team/roberto_mota.jpg', linkedin: '#', github: '#' },
+  { name: 'Rita Godinho',   avatar: '/public/images/team/rita_godinho.jpg', linkedin: '#', github: '#' },
+  { name: 'Tomás Coutinho', avatar: '/public/images/team/tomas_coutinho.jpg', linkedin: '#', github: '#' },
 ];
 
 const supervisors = [
-  { name: 'Nuno Almeida',    avatar: 'https://i.pravatar.cc/150?img=60', linkedin: '#', github: '#' },
-  { name: 'Antônio Teixeira',avatar: 'https://i.pravatar.cc/150?img=32', linkedin: '#', github: '#' },
-  { name: 'Ana Rocha',       avatar: 'https://i.pravatar.cc/150?img=44', linkedin: '#', github: '#' },
-  { name: 'Samuel Silva',    avatar: 'https://i.pravatar.cc/150?img=57', linkedin: '#', github: '#' },
+  { name: 'Nuno Almeida',    avatar: '/public/images/supervisors/nuno-almeida.jpeg', linkedin: '#', github: '#' },
+  { name: 'Antônio Teixeira',avatar: '/public/images/supervisors/antonio_teixeira.png', linkedin: '#', github: '#' },
+  { name: 'Ana Rocha',       avatar: '/public/images/supervisors/ana_rocha.jpeg', linkedin: '#', github: '#' },
+  { name: 'Samuel Silva',    avatar: '/public/images/supervisors/samuel_silva.jpg', linkedin: '#', github: '#' },
 ];
 
 // ── SVG ICONS ─────────────────────────────────────────────────────────────────
