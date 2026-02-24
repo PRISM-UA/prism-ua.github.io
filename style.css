@@ -91,12 +91,6 @@ nav {
   filter: saturate(0.85);
 }
 
-.hero-image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(217,95,43,0.25) 0%, transparent 60%);
-}
 
 .hero-content {
   display: flex;
@@ -123,7 +117,7 @@ nav {
 }
 
 .hero-subtitle-small {
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--orange);
@@ -187,7 +181,6 @@ section {
 }
 
 #context .section-title { color: var(--white); }
-#context .section-title::after { background: rgba(255,255,255,0.5); }
 
 .context-grid {
   display: grid;
@@ -201,34 +194,8 @@ section {
   font-weight: 700;
 }
 
-.context-main p {
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: rgba(255,255,255,0.9);
-}
-
-.context-main strong {
-  color: var(--white);
-  font-weight: 600;
-}
-
-.context-side {
-  background: rgba(255,255,255,0.12);
-  border-radius: 1rem;
-  padding: 2.5rem;
-  border: 1px solid rgba(255,255,255,0.2);
-
-}
-
-.context-side p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 1.5rem;
-}
-
 .objectives-label {
-  font-size: 0.875rem !important;
+  font-size: 1.1rem !important;
   font-weight: 600 !important;
   color: rgba(255,255,255,0.7) !important;
   text-transform: uppercase;
@@ -236,37 +203,23 @@ section {
   margin-bottom: 0.75rem !important;
 }
 
-.context-side ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+.context-main {
+  font-size: 1.4rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.9);
 }
 
-.context-side ul li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.88);
-  line-height: 1.5;
-}
+.context-side {
+  background: rgba(255,255,255,0.12);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  font-size: 1.2rem;
 
-.context-side ul li::before {
-  content: '◆';
-  color: rgba(255,255,255,0.5);
-  font-size: 0.55rem;
-  margin-top: 0.4rem;
-  flex-shrink: 0;
 }
 
 /* ── GOALS ── */
 #goals { background: var(--cream); }
-
-.goals-list {
-  display: flex;
-  flex-direction: column;
-}
 
 .goal-item {
   display: grid;
@@ -276,25 +229,19 @@ section {
   padding: 3rem 0;
 }
 
-.goal-item:last-child { border-bottom: 1px solid var(--soft); }
 
 .goal-item.reverse .goal-text { order: 2; }
-.goal-item.reverse .goal-visual { order: 1; }
-
-.goal-text { padding: 2rem 3rem 2rem 0; }
-.goal-item.reverse .goal-text { padding: 2rem 0 2rem 3rem; }
 
 .goal-number {
   font-family: 'Playfair Display', serif;
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 900;
-  color: var(--soft);
+  color: var(--mid);
   line-height: 1;
-  margin-bottom: 0.5rem;
 }
 
-.goal-text p {
-  font-size: 1.05rem;
+.goal-text {
+  font-size: 1.5rem;
   line-height: 1.7;
   color: var(--mid);
 }
@@ -308,15 +255,9 @@ section {
 
 .goal-visual img {
   width: 100%;
-  max-width: 260px;
+  max-width: 300px;
   border-radius: 1rem;
-  filter: saturate(0.7);
   transition: filter 0.3s, transform 0.3s;
-}
-
-.goal-visual img:hover {
-  filter: saturate(1);
-  transform: scale(1.03);
 }
 
 /* ── DOCUMENTS ── */
@@ -350,25 +291,15 @@ section {
   position: relative;
 }
 
-.doc-icon::before {
-  content: '';
-  position: absolute;
-  top: 0; right: -8px;
-  border-width: 0 8px 8px 0;
-  border-style: solid;
-  border-color: transparent var(--orange-dark) transparent transparent;
-  transform: rotate(180deg);
-}
-
 .doc-card h3 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--orange);
   margin-bottom: 0.5rem;
 }
 
 .doc-card p {
-  font-size: 0.875rem;
+  font-size: 1.1rem;
   color: var(--mid);
   line-height: 1.55;
   margin-bottom: 1.25rem;
@@ -378,7 +309,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--orange);
   text-decoration: none;
@@ -441,7 +372,7 @@ section {
   justify-content: center;
   gap: 0.6rem;
   opacity: 0;
-  transition: opacity 0.25s;
+  transition: opacity .5s;
 }
 
 .avatar-wrap:hover .avatar-overlay { opacity: 1; }
