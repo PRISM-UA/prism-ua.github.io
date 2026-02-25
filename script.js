@@ -2,10 +2,10 @@
 
 const teamMembers = [
   { name: 'João Ferreira',  avatar: '/public/images/team/joao_ferreira.jpeg', linkedin: '#', github: '#' },
-  { name: 'Ana Santos',     avatar: '/public/images/team/ana_santos.jpeg', linkedin: '#', github: '#' },
-  { name: 'Roberto Mota',   avatar: '/public/images/team/roberto_mota.jpg', linkedin: '#', github: '#' },
-  { name: 'Rita Godinho',   avatar: '/public/images/team/rita_godinho.jpg', linkedin: '#', github: '#' },
-  { name: 'Tomás Coutinho', avatar: '/public/images/team/tomas_coutinho.jpg', linkedin: '#', github: '#' },
+  { name: 'Ana Santos',     avatar: '/public/images/team/ana_santos.jpeg', linkedin: 'https://www.linkedin.com/in/anasantos05/', github: 'https://github.com/AnaSantos05' },
+  { name: 'Roberto Mota',   avatar: '/public/images/team/roberto_mota.jpg', linkedin: 'https://www.linkedin.com/in/roberto-mota-0395653b3/', github: 'https://github.com/Roberto120188' },
+  { name: 'Rita Godinho',   avatar: '/public/images/team/rita_godinho.jpg', linkedin: '#', github: 'https://github.com/rmpgodinho' },
+  { name: 'Tomás Coutinho', avatar: '/public/images/team/tomas_coutinho.jpg', linkedin: 'https://www.linkedin.com/in/tom%C3%A1s-coutinho-a18b9a313/', github: 'https://github.com/T0masCoutinho' },
 ];
 
 const supervisors = [
