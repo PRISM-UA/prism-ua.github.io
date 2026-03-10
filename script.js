@@ -1,7 +1,7 @@
 // ── DATA ──────────────────────────────────────────────────────────────────────
 
 const teamMembers = [
-  { name: 'João Ferreira',  avatar: '/public/images/team/joao_ferreira.jpeg', linkedin: '#', github: '#' },
+  { name: 'João Ferreira',  avatar: '/public/images/team/joao_ferreira.jpeg', linkedin: '#', github: 'https://github.com/JoaopFerreira05' },
   { name: 'Ana Santos',     avatar: '/public/images/team/ana_santos.jpeg', linkedin: 'https://www.linkedin.com/in/anasantos05/', github: 'https://github.com/AnaSantos05' },
   { name: 'Roberto Mota',   avatar: '/public/images/team/roberto_mota.jpg', linkedin: 'https://www.linkedin.com/in/roberto-mota-0395653b3/', github: 'https://github.com/Roberto120188' },
   { name: 'Rita Godinho',   avatar: '/public/images/team/rita_godinho.jpg', linkedin: '#', github: 'https://github.com/rmpgodinho' },
@@ -15,8 +15,7 @@ const supervisors = [
   { name: 'Samuel Silva',    avatar: '/public/images/supervisors/samuel_silva.jpg', linkedin: '#', github: '#' },
 ];
 
-// ── SVG ICONS ─────────────────────────────────────────────────────────────────
-
+// SVG ICONS 
 const linkedinSVG = `
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
@@ -28,11 +27,10 @@ const githubSVG = `
     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
   </svg>`;
 
-// ── RENDER HELPERS ────────────────────────────────────────────────────────────
+// RENDER HELPERS 
 
 function createMemberCard(person) {
   const card = document.createElement('div');
-  card.className = 'team-member';
   card.innerHTML = `
     <div class="avatar-wrap">
       <img src="${person.avatar}" alt="${person.name}" />
@@ -58,7 +56,7 @@ function renderTeam() {
   supervisors.forEach(p => supervisorsGrid.appendChild(createMemberCard(p)));
 }
 
-// ── SCROLL REVEAL ─────────────────────────────────────────────────────────────
+// SCROLL REVEAL
 
 function initScrollReveal() {
   const reveals = document.querySelectorAll('.reveal');
@@ -74,7 +72,7 @@ function initScrollReveal() {
   reveals.forEach(el => observer.observe(el));
 }
 
-// ── ACTIVE NAV ────────────────────────────────────────────────────────────────
+// ACTIVE NAV
 
 function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
@@ -94,7 +92,7 @@ function initActiveNav() {
   });
 }
 
-// ── INIT ──────────────────────────────────────────────────────────────────────
+// INIT
 
 document.addEventListener('DOMContentLoaded', () => {
   renderTeam();
