@@ -20,7 +20,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── NAV ── */
+/* NAV */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -71,7 +71,7 @@ nav {
   color: var(--white);
 }
 
-/* ── HERO ── */
+/* HERO */
 #hero {
   min-height: 100vh;
   display: grid;
@@ -149,7 +149,7 @@ nav {
 
 .hero-cta:hover { gap: 1rem; }
 
-/* ── SECTION BASE ── */
+/* SECTION BASE */
 section {
   padding: 7rem 8vw;
 }
@@ -174,7 +174,7 @@ section {
   border-radius: 2px;
 }
 
-/* ── CONTEXT ── */
+/* CONTEXT */
 #context {
   background: var(--orange);
   color: var(--white);
@@ -218,7 +218,7 @@ section {
 
 }
 
-/* ── GOALS ── */
+/* GOALS */
 #goals { background: var(--cream); }
 
 .goal-item {
@@ -407,9 +407,9 @@ footer {
   background: var(--dark);
   color: rgba(255,255,255,0.5);
   text-align: center;
-  padding: 1.75rem 2rem;
+  padding: 2rem 2rem;
   font-size: 0.8rem;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.05em;
 }
 
 footer span { color: var(--orange-light); }
