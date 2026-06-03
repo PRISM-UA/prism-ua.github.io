@@ -13,6 +13,8 @@
 
 html { scroll-behavior: smooth; }
 
+img { max-width: 100%; }
+
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--cream);
@@ -80,6 +82,41 @@ nav {
 .nav-links a.nav-cta.active {
   background: var(--orange);
   color: var(--white);
+}
+
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--dark);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+nav.menu-open .nav-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+nav.menu-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+nav.menu-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* HERO */
@@ -653,6 +690,225 @@ section {
   cursor: pointer;
 }
 
+@media (max-width: 900px) {
+  nav {
+    padding: 0 1.25rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1.25rem;
+    background: rgba(250,246,241,0.98);
+    border-bottom: 1px solid rgba(217,95,43,0.15);
+    box-shadow: 0 16px 30px rgba(26,20,16,0.08);
+    transition: max-height 0.25s ease, padding 0.25s ease;
+  }
+
+  nav.menu-open .nav-links {
+    max-height: 320px;
+    padding: 0.9rem 1.25rem 1.1rem;
+  }
+
+  .nav-links a {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1rem;
+  }
+
+  #hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    min-height: 44vh;
+  }
+
+  .hero-content {
+    padding: 3.5rem 7vw 4rem;
+  }
+
+  .hero-subtitle-small {
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    letter-spacing: 0.14em;
+  }
+
+  section {
+    padding: 5rem 7vw;
+  }
+
+  .section-title {
+    margin-bottom: 2.5rem;
+  }
+
+  .context-grid,
+  .goal-item {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .context-main,
+  .goal-text,
+  .project-copy,
+  .results-list {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+  }
+
+  .context-side {
+    padding: 1.75rem;
+    font-size: 1rem;
+  }
+
+  .casa-viva {
+    font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+  }
+
+  .goal-item {
+    padding: 2.5rem 0;
+  }
+
+  .goal-item.reverse .goal-text {
+    order: 0;
+  }
+
+  .goal-number {
+    font-size: clamp(3.5rem, 18vw, 5rem);
+  }
+
+  .goal-visual {
+    padding: 0;
+  }
+
+  .docs-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  }
+
+  .architecture-visual {
+    margin: 4rem -7vw -5rem;
+    padding: 3rem 7vw;
+  }
+}
+
+@media (max-width: 560px) {
+  nav {
+    height: 58px;
+    padding: 0 1rem;
+  }
+
+  .nav-logo {
+    font-size: 1.05rem;
+  }
+
+  .nav-links {
+    top: 58px;
+  }
+
+  #hero {
+    padding-top: 58px;
+  }
+
+  .hero-image {
+    min-height: 34vh;
+  }
+
+  .hero-content {
+    padding: 2.75rem 1.25rem 3.25rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.6rem, 16vw, 3.4rem);
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  section {
+    padding: 4rem 1.25rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 10vw, 2.4rem);
+  }
+
+  .context-grid {
+    gap: 1.5rem;
+  }
+
+  .context-main ul,
+  .context-side ul,
+  .results-list {
+    padding-left: 1.2rem;
+  }
+
+  .context-side,
+  .doc-card,
+  .goals-more,
+  .modal-box {
+    padding: 1.35rem;
+  }
+
+  .goals-more {
+    align-items: stretch;
+  }
+
+  .goals-more-link {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .doc-download {
+    font-size: 1.05rem;
+  }
+
+  .team-grid {
+    gap: 1.25rem;
+  }
+
+  .team-grid > div {
+    width: calc(50% - 0.75rem);
+    min-width: 112px;
+  }
+
+  .avatar-wrap {
+    width: min(120px, 36vw);
+    height: min(120px, 36vw);
+  }
+
+  .architecture-visual {
+    margin: 3rem -1.25rem -4rem;
+    padding: 2.5rem 1.25rem;
+  }
+
+  .architecture-hotspot {
+    width: 34px;
+    height: 34px;
+    font-size: 1.25rem;
+  }
+
+  .modal-overlay {
+    padding: 1rem;
+  }
+
+  .modal-box h3 {
+    font-size: 1.6rem;
+  }
+
+}
+
 /* FOOTER */
 footer {
   background: var(--dark);
@@ -675,4 +931,10 @@ footer span { color: var(--orange-light); }
 .reveal.visible {
   opacity: 1;
   transform: none;
+}
+
+@media (max-width: 560px) {
+  footer {
+    padding: 1.5rem 1rem;
+  }
 }
