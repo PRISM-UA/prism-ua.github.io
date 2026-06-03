@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRISM - Projeto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">PRISM <span>◆</span></a>
+  <ul class="nav-links">
+    <li><a href="#arquitetura">Architecture</a></li>
+    <li><a href="#highlight">Highlight</a></li>
+    <li><a href="#dashboard">Dashboard</a></li>
+    <li><a href="#resultados">Results</a></li>
+    <li><a href="index.html" class="nav-cta">Overview</a></li>
+  </ul>
+</nav>
+
+<!-- ARQUITETURA -->
+<section id="arquitetura">
+  <h2 class="section-title">Architecture</h2>
+  <p class="project-copy reveal">
+    The PRISM architecture comprises three main layers: the device layer (sensors and endpoints), the integration layer (data harmonization and normalization), and the applications and dashboard layer (visualization and user interfaces). Each layer plays a crucial role in collecting, processing, and presenting residential monitoring data to support continuous health monitoring and smart home automation.
+  </p>
+
+  <div class="architecture-visual">
+    <div class="architecture-frame reveal">
+      <img src="public/images/architecture/architecture.png" alt="Arquitetura do sistema PRISM" />
+      <button class="architecture-hotspot" style="top: 26%; left: 97%;" type="button" data-modal-title="Devices" data-modal-text="The device layer contains residential sensors and endpoints that communicate with the system through multiple protocols: Zigbee, Matter, and proprietary APIs for seamless data collection across diverse smart home devices.">+</button>
+      <button class="architecture-hotspot" style="top: 37%; left: 71%;" type="button" data-modal-title="Home Server" data-modal-text="The integration layer receives data from multiple sources, harmonizes data formats, and transforms dispersed events into a coherent and reusable representation that the PRISM system can process and analyze.">+</button>
+      <button class="architecture-hotspot" style="top: 26%; left: 36%;" type="button" data-modal-title="Interaction Device" data-modal-text="Applications and dashboards present health indicators and alerts clearly, supporting research teams, caregivers, and healthcare professionals in interpreting residential patterns and trends over time.">+</button>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHT -->
+
+<section id="highlight">
+  <h2 class="section-title">What Sets Us Apart</h2>
+  <p class="project-copy reveal">
+    While similar systems exist, PRISM distinguishes itself through its comprehensive device integration approach. We leverage proprietary APIs to extract data directly from manufacturer platforms, and employ a smart assistant that automates Zigbee device pairing and facilitates Matter device integration. Additionally, we integrate the Withings API to seamlessly incorporate health data from their scales and sleep trackers, providing a unified health monitoring experience.
+  </p>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboard">
+  <h2 class="section-title">Dashboard</h2>
+  <img class="dashboard-image reveal" src="public/images/dashboard/dashboard.png" alt="Dashboard PRISM" />
+  <p class="project-copy reveal">
+    The PRISM dashboard provides an intuitive interface for monitoring health-related data collected from the residential environment. It enables users to track trends, identify patterns, and gain insights into well-being over time through interactive graphs, real-time data visualization, and customizable alert notifications.
+  </p>
+  <div class="paragraph-spacer"></div>
+  <p class="project-copy reveal">
+    The system integrates a voice assistant that intelligently processes user instructions alongside an intuitive touch interface for device control. Users can easily turn devices on or off, manage home rooms, add new devices (both Zigbee and Matter protocols), and access alert history—all accessible through dedicated control buttons conveniently positioned on the dashboard's right sidebar.
+  </p>
+</section>
+
+<!-- Easter Egg: isto é uma flag (CTF) -->
+
+<!-- RESULTADOS -->
+<section id="resultados">
+  <h2 class="section-title">Results</h2>
+  <p class="project-copy reveal">
+    With this prove of concept, we have achieved the following results, which demonstrate the potential of the PRISM infrastructure for smart home health monitoring and its contribution to the field of ambient assisted living.
+  </p>
+  <ul class="results-list reveal">
+    <li>
+      <b>Modular and Flexible infrastructure</b>
+      <p class="result-description">Creation of a modular and flexible infrastucture capable of handling multiple devices</p>
+    </li>
+    <li>
+      <b>Smart assistant capable of handling multiple devices</b>
+      <p class="result-description">Smart Assistant capable of handling multiple connected devices through speech and text interaction, enabling device control, real-time house information retrieval (e.g., temperature), and presentation of contextual smart home data to the user</p>
+    </li>
+    <li>
+      <b>Withings's API integration</b>
+      <p class="result-description">Integration of the Withings API and health devices, enabling collection, monitoring, and historical visualization of user health-related data through dashboard graphs</p>
+    </li>
+    <li>
+      <b>Data history engine and dashboard</b>
+      <p class="result-description">Implementation of a data history engine and dashboard for visualizing temporal trends and significant changes in residential activity</p>
+    </li>
+    <li>
+      <b>Gateway platform that reliably bridges physical devices to backend infrastructure</b>
+      <p class="result-description">A gateway platform that reliably bridges physical devices to the backend infrastructure, ensuring seamless communication and data flow</p>
+    </li>
+  </ul>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 <span>PRISM</span> · Universidade de Aveiro · IEETA &nbsp;·&nbsp; Made in an igloo, by penguins 🐧
+</footer>
+
+<div class="modal-overlay" id="architecture-modal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" type="button" aria-label="Fechar modal">×</button>
+    <h3 id="modal-title"></h3>
+    <p id="modal-text"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  const modal = document.getElementById('architecture-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalText = document.getElementById('modal-text');
+  const closeModalButton = modal.querySelector('.modal-close');
+
+  function openArchitectureModal(title, text) {
+    modalTitle.textContent = title;
+    modalText.textContent = text;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeArchitectureModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  document.querySelectorAll('.architecture-hotspot').forEach(button => {
+    button.addEventListener('click', () => {
+      openArchitectureModal(button.dataset.modalTitle, button.dataset.modalText);
+    });
+  });
+
+  closeModalButton.addEventListener('click', closeArchitectureModal);
+
+  modal.addEventListener('click', event => {
+    if (event.target === modal) {
+      closeArchitectureModal();
+    }
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeArchitectureModal();
+    }
+  });
+</script>
+</body>
+</html>

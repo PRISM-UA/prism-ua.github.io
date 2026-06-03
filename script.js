@@ -1,18 +1,18 @@
 // ── DATA ──────────────────────────────────────────────────────────────────────
 
 const teamMembers = [
-  { name: 'João Ferreira',  avatar: '/public/images/team/joao_ferreira.jpeg', linkedin: '#', github: 'https://github.com/JoaopFerreira05' },
+  { name: 'João Ferreira',  avatar: '/public/images/team/joao_ferreira.jpeg', linkedin: '', github: 'https://github.com/JoaopFerreira05' },
   { name: 'Ana Santos',     avatar: '/public/images/team/ana_santos.jpeg', linkedin: 'https://www.linkedin.com/in/anasantos05/', github: 'https://github.com/AnaSantos05' },
   { name: 'Roberto Mota',   avatar: '/public/images/team/roberto_mota.jpg', linkedin: 'https://www.linkedin.com/in/roberto-mota-0395653b3/', github: 'https://github.com/Roberto120188' },
-  { name: 'Rita Godinho',   avatar: '/public/images/team/rita_godinho.jpg', linkedin: '#', github: 'https://github.com/rmpgodinho' },
+  { name: 'Rita Godinho',   avatar: '/public/images/team/rita_godinho.jpg', linkedin: '', github: 'https://github.com/rmpgodinho' },
   { name: 'Tomás Coutinho', avatar: '/public/images/team/tomas_coutinho.jpg', linkedin: 'https://www.linkedin.com/in/tom%C3%A1s-coutinho-a18b9a313/', github: 'https://github.com/T0masCoutinho' },
 ];
 
 const supervisors = [
-  { name: 'Nuno Almeida',    avatar: '/public/images/supervisors/nuno-almeida.jpeg', linkedin: '#', github: '#' },
-  { name: 'Antônio Teixeira',avatar: '/public/images/supervisors/antonio_teixeira.png', linkedin: '#', github: '#' },
-  { name: 'Ana Rocha',       avatar: '/public/images/supervisors/ana_rocha.jpeg', linkedin: '#', github: '#' },
-  { name: 'Samuel Silva',    avatar: '/public/images/supervisors/samuel_silva.jpg', linkedin: '#', github: '#' },
+  { name: 'Nuno Almeida',    avatar: '/public/images/supervisors/nuno-almeida.jpeg', linkedin: '', ieeta: 'https://www.ieeta.pt/index.php/people/nuno-almeida/' },
+  { name: 'Ana Rocha',       avatar: '/public/images/supervisors/ana_rocha.jpeg', linkedin: 'https://pt.linkedin.com/in/ana-patricia-rocha-19a5aba1', ieeta: 'https://www.ieeta.pt/index.php/people/ana-rocha/' },
+  { name: 'António Teixeira',avatar: '/public/images/supervisors/antonio_teixeira.png', linkedin: 'https://pt.linkedin.com/in/ant%C3%B3nio-joaquim-teixeira-1362b82', ieeta: 'https://www.ieeta.pt/index.php/people/antonio-j-s-teixeira/' },
+  { name: 'Samuel Silva',    avatar: '/public/images/supervisors/samuel_silva.jpg', linkedin: 'https://pt.linkedin.com/in/sssilva', ieeta: 'https://www.ieeta.pt/index.php/people/samuel-silva/' },
 ];
 
 // SVG ICONS 
@@ -29,19 +29,31 @@ const githubSVG = `
 
 // RENDER HELPERS 
 
+function hasSocialUrl(url) {
+  return Boolean(url && url !== '#');
+}
+
 function createMemberCard(person) {
   const card = document.createElement('div');
+  const socialLinks = [
+    hasSocialUrl(person.linkedin) ? `
+        <a href="${person.linkedin}" class="social-link" title="LinkedIn" target="_blank" rel="noopener">
+          ${linkedinSVG}
+        </a>` : '',
+    hasSocialUrl(person.github) ? `
+        <a href="${person.github}" class="social-link" title="GitHub" target="_blank" rel="noopener">
+          ${githubSVG}
+        </a>` : '',
+    hasSocialUrl(person.ieeta) ? `
+        <a href="${person.ieeta}" class="social-link" title="IEETA" target="_blank" rel="noopener">
+          <img src="/public/images/supervisors/ieeta.png" alt="IEETA" class="social-icon-image" />
+        </a>` : '',
+  ].join('');
+
   card.innerHTML = `
     <div class="avatar-wrap">
       <img src="${person.avatar}" alt="${person.name}" />
-      <div class="avatar-overlay">
-        <a href="${person.linkedin}" class="social-link" title="LinkedIn" target="_blank" rel="noopener">
-          ${linkedinSVG}
-        </a>
-        <a href="${person.github}" class="social-link" title="GitHub" target="_blank" rel="noopener">
-          ${githubSVG}
-        </a>
-      </div>
+      ${socialLinks ? `<div class="avatar-overlay">${socialLinks}</div>` : ''}
     </div>
     <span class="member-name">${person.name}</span>
   `;
@@ -51,6 +63,8 @@ function createMemberCard(person) {
 function renderTeam() {
   const teamGrid = document.getElementById('team-members');
   const supervisorsGrid = document.getElementById('supervisors');
+
+  if (!teamGrid || !supervisorsGrid) return;
 
   teamMembers.forEach(p => teamGrid.appendChild(createMemberCard(p)));
   supervisors.forEach(p => supervisorsGrid.appendChild(createMemberCard(p)));
